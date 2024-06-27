@@ -1,0 +1,303 @@
+create table amenities
+(
+    propertiesid               varchar(16) not null,
+    amenity                    varchar(21) not null,
+    propertiesrecycling_type   varchar(9)  null,
+    lon                        double      not null,
+    lat                        double      not null,
+    id                         varchar(16) not null
+        primary key,
+    propertiescreated_by       varchar(14) null,
+    propertiesname             varchar(58) null,
+    propertiesdescription      varchar(84) null,
+    propertieswheelchair       varchar(7)  null,
+    propertiesoperator         varchar(24) null,
+    propertiesoperatorwikidata varchar(9)  null,
+    propertiesaddrcity         varchar(10) null
+);
+
+create table postal_codes
+(
+    postal_code char(6) not null
+        primary key,
+    latitude    double  null,
+    longitude   double  null
+);
+
+create table routes
+(
+    route_id         varchar(255) not null
+        primary key,
+    agency_id        text         null,
+    route_short_name varchar(50)  null,
+    route_long_name  varchar(200) null,
+    route_desc       text         null,
+    route_type       int          null,
+    route_color      text         null,
+    route_text_color text         null,
+    route_url        text         null
+);
+
+create index idx_routes_route_id
+    on routes (route_id);
+
+create index idx_routes_route_names
+    on routes (route_id, route_short_name, route_long_name);
+
+create table shop
+(
+    type                                        text         null,
+    `properties/@id`                            text         null,
+    `properties/description`                    text         null,
+    `properties/note`                           text         null,
+    shop                                        text         null,
+    `geometry/type`                             text         null,
+    lon                                         double       null,
+    lat                                         double       null,
+    id                                          varchar(255) not null
+        primary key,
+    `properties/brand`                          text         null,
+    `properties/brand:wikidata`                 text         null,
+    `properties/brand:wikipedia`                text         null,
+    name                                        text         null,
+    `properties/addr:city`                      text         null,
+    `properties/addr:housenumber`               text         null,
+    `properties/addr:postcode`                  text         null,
+    `properties/addr:street`                    text         null,
+    `properties/opening_hours`                  text         null,
+    `properties/phone`                          text         null,
+    `properties/website`                        text         null,
+    `properties/winkelnummer`                   text         null,
+    `properties/branch`                         text         null,
+    `properties/source`                         text         null,
+    `properties/source:date`                    text         null,
+    `properties/addr:country`                   text         null,
+    `properties/brand:website`                  text         null,
+    `properties/diet:halal`                     text         null,
+    `properties/jumbo:id`                       text         null,
+    `properties/wheelchair`                     text         null,
+    `properties/addr:province`                  text         null,
+    `properties/official_name`                  text         null,
+    `properties/operator`                       text         null,
+    `properties/url`                            text         null,
+    `properties/check_date:opening_hours`       text         null,
+    `properties/ref`                            text         null,
+    `properties/toilets`                        text         null,
+    `properties/email`                          text         null,
+    `properties/atm`                            text         null,
+    `properties/post_office`                    text         null,
+    `properties/post_office:type`               text         null,
+    `properties/clothes`                        text         null,
+    `properties/source_ref`                     text         null,
+    `properties/payment:cash`                   text         null,
+    `properties/payment:debit_cards`            text         null,
+    `properties/unisex`                         text         null,
+    `properties/contact:facebook`               text         null,
+    `properties/contact:instagram`              text         null,
+    `properties/contact:twitter`                text         null,
+    `properties/network`                        text         null,
+    `properties/amenity`                        text         null,
+    `properties/cuisine`                        text         null,
+    `properties/diet:vegan`                     text         null,
+    `properties/diet:vegetarian`                text         null,
+    `properties/happycow:id`                    text         null,
+    `properties/contact:phone`                  text         null,
+    `properties/name:nl`                        text         null,
+    `properties/contact:email`                  text         null,
+    `properties/female`                         text         null,
+    `properties/male`                           text         null,
+    `properties/name:en`                        text         null,
+    `properties/store_number`                   text         null,
+    `properties/organic`                        text         null,
+    `properties/addr:unit`                      text         null,
+    `properties/level`                          text         null,
+    `properties/self_service`                   text         null,
+    `properties/entrance`                       text         null,
+    `properties/facebook`                       text         null,
+    `properties/payment:coins`                  text         null,
+    `properties/payment:girocard`               text         null,
+    `properties/payment:notes`                  text         null,
+    `properties/cafe`                           text         null,
+    `properties/short_name`                     text         null,
+    `properties/confectionery`                  text         null,
+    `properties/addr:housename`                 text         null,
+    `properties/internet_access`                text         null,
+    `properties/alcohol`                        text         null,
+    `properties/man_made`                       text         null,
+    `properties/surveillance`                   text         null,
+    `properties/wholesale`                      text         null,
+    `properties/contact:website`                text         null,
+    `properties/service:vehicle:car_repair`     text         null,
+    `properties/service:vehicle:inspection`     text         null,
+    `properties/service:vehicle:muffler`        text         null,
+    `properties/service:vehicle:oil_change`     text         null,
+    `properties/service:vehicle:tyres`          text         null,
+    `properties/service:vehicle:used_car_sales` text         null,
+    `properties/name:de`                        text         null,
+    `properties/layer`                          text         null,
+    `properties/changing_table`                 text         null,
+    `properties/changing_table:count`           text         null,
+    `properties/changing_table:location`        text         null,
+    `properties/kids_area:indoor`               text         null,
+    `properties/toilets:access`                 text         null,
+    `properties/second_hand`                    text         null,
+    `properties/name:zh-Hans`                   text         null,
+    `properties/toilets:wheelchair`             text         null,
+    `properties/service:bicycle:pump`           text         null,
+    `properties/service:bicycle:rental`         text         null,
+    `properties/service:bicycle:repair`         text         null,
+    `properties/service:bicycle:retail`         text         null,
+    `properties/dogs`                           text         null,
+    `properties/indoor`                         text         null,
+    `properties/air_conditioning`               text         null
+);
+
+create table stops
+(
+    stop_id             varchar(255) not null
+        primary key,
+    stop_code           text         null,
+    stop_name           text         null,
+    stop_lat            float        null,
+    stop_lon            float        null,
+    location_type       text         null,
+    parent_station      text         null,
+    stop_timezone       text         null,
+    wheelchair_boarding text         null,
+    platform_code       text         null,
+    zone_id             text         null,
+    clean_stop_id       text         null
+);
+
+create index idx_stops_stop_id
+    on stops (stop_id);
+
+create table tourism
+(
+    type                                  text        null,
+    `properties/@id`                      text        null,
+    name                                  text        null,
+    attraction_type                       text        null,
+    `properties/website`                  text        null,
+    `properties/wikidata`                 text        null,
+    `geometry/type`                       text        null,
+    lon                                   double      null,
+    lat                                   double      null,
+    id                                    varchar(20) not null
+        primary key,
+    `properties/description`              text        null,
+    `properties/image`                    text        null,
+    `properties/mapillary`                text        null,
+    `properties/information`              text        null,
+    `properties/artist_name`              text        null,
+    `properties/artwork_type`             text        null,
+    `properties/historic`                 text        null,
+    `properties/memorial`                 text        null,
+    `properties/wheelchair`               text        null,
+    `properties/addr:city`                text        null,
+    `properties/addr:country`             text        null,
+    `properties/addr:housenumber`         text        null,
+    `properties/addr:postcode`            text        null,
+    `properties/addr:province`            text        null,
+    `properties/addr:street`              text        null,
+    `properties/email`                    text        null,
+    `properties/internet_access`          text        null,
+    `properties/internet_access:fee`      text        null,
+    `properties/phone`                    text        null,
+    `properties/smoking`                  text        null,
+    `properties/source`                   text        null,
+    `properties/operator`                 text        null,
+    `properties/rooms`                    text        null,
+    `properties/source:date`              text        null,
+    `properties/stars`                    text        null,
+    `properties/amenity`                  text        null,
+    `properties/loc_name`                 text        null,
+    `properties/name:li`                  text        null,
+    `properties/name:en`                  text        null,
+    `properties/name:es`                  text        null,
+    `properties/opening_hours`            text        null,
+    `properties/name:nl`                  text        null,
+    `properties/old_name`                 text        null,
+    `properties/zoo`                      text        null,
+    `properties/building:architecture`    text        null,
+    `properties/board_type`               text        null,
+    `properties/wikimedia_commons`        text        null,
+    `properties/air_conditioning`         text        null,
+    `properties/brand`                    text        null,
+    `properties/brand:wikidata`           text        null,
+    `properties/fee`                      text        null,
+    `properties/payment:museumkaart`      text        null,
+    `properties/wikipedia`                text        null,
+    `properties/contact:phone`            text        null,
+    `properties/diet:vegan`               text        null,
+    `properties/diet:vegetarian`          text        null,
+    `properties/check_date:opening_hours` text        null,
+    `properties/attraction`               text        null,
+    `properties/guest_house`              text        null,
+    `properties/cuisine`                  text        null,
+    `properties/name:ka`                  text        null,
+    `properties/internet_access:type`     text        null,
+    `properties/material`                 text        null,
+    `properties/start_date`               text        null,
+    `properties/natural`                  text        null,
+    `properties/bicycle`                  text        null,
+    `properties/subject`                  text        null,
+    `properties/subject:wikidata`         text        null,
+    `properties/subject:wikipedia`        text        null,
+    `properties/access`                   text        null,
+    `properties/url`                      text        null,
+    `properties/artwork_subject`          text        null,
+    `properties/hiking`                   text        null,
+    `properties/direction`                text        null,
+    `properties/ref:anwb`                 text        null,
+    `properties/map_type`                 text        null,
+    `properties/heritage`                 text        null,
+    `properties/entrance`                 text        null,
+    `properties/denomination`             text        null,
+    `properties/religion`                 text        null,
+    `properties/artist:wikidata`          text        null,
+    `properties/indoor`                   text        null,
+    `properties/mtb`                      text        null,
+    `properties/number_of_apartments`     text        null,
+    `properties/contact:website`          text        null
+);
+
+create table trips
+(
+    route_id              varchar(255) null,
+    service_id            text         null,
+    trip_id               varchar(255) not null
+        primary key,
+    realtime_trip_id      text         null,
+    trip_headsign         text         null,
+    trip_short_name       text         null,
+    trip_long_name        text         null,
+    direction_id          int          null,
+    block_id              text         null,
+    shape_id              text         null,
+    wheelchair_accessible text         null,
+    bikes_allowed         text         null,
+    constraint trips_ibfk_1
+        foreign key (route_id) references routes (route_id)
+);
+
+create table stop_times
+(
+    trip_id             varchar(255) not null,
+    stop_sequence       int          not null,
+    stop_id             varchar(255) null,
+    stop_headsign       text         null,
+    arrival_time        time         null,
+    departure_time      time         null,
+    pickup_type         text         null,
+    drop_off_type       text         null,
+    timepoint           text         null,
+    shape_dist_traveled text         null,
+    fare_units_traveled text         null,
+    primary key (trip_id, stop_sequence),
+    constraint stop_times_ibfk_1
+        foreign key (trip_id) references trips (trip_id),
+    constraint stop_times_ibfk_2
+        foreign key (stop_id) references stops (stop_id)
+            on delete cascade
+);
