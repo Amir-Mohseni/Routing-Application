@@ -15,7 +15,7 @@ public class dbManager {
         String USERNAME = dbCredentials.USERNAME;
         String PORT = dbCredentials.PORT;
         String HOST = dbCredentials.HOST;
-        String DATABASE_NAME = dbCredentials.databaseName;
+        String DATABASE_NAME = dbCredentials.DATABASE_NAME;
         String PASSWORD = dbCredentials.PASSWORD;
         String DATABASE_URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE_NAME
                 + "?autoReconnect=true&useSSL=true&requireSSL=true&connectTimeout=50000&socketTimeout=500000";

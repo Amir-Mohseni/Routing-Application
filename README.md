@@ -34,6 +34,17 @@ To install and run the application, follow these steps:
    - For Windows: `maven_script.bat`
 4. If you want to populate your own database, use the `Maastricht Data` folder which contains the necessary data for Maastricht using CSV files.
 
+## Environment Variables
+
+The following environment variables can be set for the application. If not set, default values will be used:
+
+- `DB_HOST` (default: `localhost`)
+- `DB_PORT` (default: `3306`)
+- `DB_USERNAME` (default: `root`)
+- `DB_PASSWORD` (default: `""` - empty string)
+- `DB_NAME` (default: `defaultdb`)
+
+
 ## Usage
 1. Open the project in your preferred Java IDE.
 2. Run the `GUI.java` file to launch the application.
