@@ -53,7 +53,7 @@ The following environment variables can be set for the application. If not set, 
 5. Click on "Calculate Route" to view the visualized route, and estimated time.
 
 ## Research Paper
-This project is accompanied by a research paper that provides detailed information on the methodologies, algorithms, and data sources used in the development of this application. The research paper can be accessed [here](https://docs.google.com/document/d/1l6J6unJrMj5cpVTA6_UVfETZJUGGveTdMWLvvOa873c/edit?usp=sharing).
+This project is accompanied by a research paper that provides detailed information on the methodologies, algorithms, and data sources used in the development of this application. The research paper can be accessed [here](https://docs.google.com/document/d/e/2PACX-1vSqRi2kUyWqu3y3N8CGixy5y7QfeYuZtLtYtkKOic4pGkYoHeLaP2TI0JsR7pdgRczBGrBHPMthVI9c/pub).
 
 ## Examples
 Here are some examples of how to use the application:
